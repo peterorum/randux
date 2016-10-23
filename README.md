@@ -1,5 +1,7 @@
 # randux
-Basic react+redux setup with es6/babel, gulp, sass, eslint, jscs, sass-lint, bower, browser-sync.
+Basic react+redux setup with es6/babel, webpack, gulp, sass, eslint, jscs, sass-lint, bower.
+
+React & webpack setup based on Wes Bos' [https://learnredux.com/](Learn Redux).
 
 ## Installation
 1. Clone the project.
