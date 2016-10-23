@@ -1,21 +1,17 @@
 var path = require('path');
-var webpack = require('webpack');
+// var webpack = require('webpack');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
     './source/randux'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dev'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
   module: {
     loaders: [
     // js
@@ -31,5 +27,13 @@ module.exports = {
     //   loader: 'style-loader!css-loader!stylus-loader'
     // }
     ]
-  }
+  },
+  plugins: [
+      new BrowserSyncPlugin({
+          host: 'localhost',
+          port: 3000,
+          proxy: 'http://localhost:8080/'
+      })
+  ]
+
 };

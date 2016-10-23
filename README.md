@@ -1,8 +1,6 @@
 # randux
 Basic react+redux setup with es6/babel, webpack, gulp, sass, eslint, jscs, sass-lint, bower.
 
-React & webpack setup based on Wes Bos' [Learn Redux](https://learnredux.com).
-
 ## Installation
 1. Clone the project.
 2. In the project folder, run `npm install` and `bower install`.
