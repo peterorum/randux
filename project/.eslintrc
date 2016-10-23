@@ -4,26 +4,16 @@
   "env": {
     "es6": true,
     "node": true,
-    "browser": true,
-    "jquery": true,
-    "mocha": true,
-    "phantomjs": true
+    "browser": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
   },
   "ecmaFeatures": {
     "modules": true
   },
   "globals": {
-  "_": false,
-  "casper": false,
-  "phantomcss": false,
-  "google": false,
-  "Modernizr": false,
-  "__utils__": false,
-  "expect": false,
-  "Handlebars": false,
-  "define": false,
-  "require": false,
-  "randlebars": true
+  "_": false
   },
   "rules": {
   "no-mixed-spaces-and-tabs": 0,
