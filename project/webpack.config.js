@@ -18,13 +18,13 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel'],
         include: path.join(__dirname, 'source')
+      },
+      // css
+      {
+        test: /\.scss$/,
+        include: path.join(__dirname, 'source'),
+        loaders: ["style", "css", "sass"]
       }
-    // // css
-    // {
-    //   test: /\.styl$/,
-    //   include: path.join(__dirname, 'client'),
-    //   loader: 'style-loader!css-loader!stylus-loader'
-    // }
     ]
   }
 
