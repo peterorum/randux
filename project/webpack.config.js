@@ -1,6 +1,5 @@
 var path = require('path');
 // var webpack = require('webpack');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -10,16 +9,16 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dev'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/assets/'
   },
   module: {
     loaders: [
-    // js
-    {
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'source')
-    }
+      // js
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'source')
+      }
     // // css
     // {
     //   test: /\.styl$/,
@@ -27,13 +26,6 @@ module.exports = {
     //   loader: 'style-loader!css-loader!stylus-loader'
     // }
     ]
-  },
-  plugins: [
-      new BrowserSyncPlugin({
-          host: 'localhost',
-          port: 3000,
-          proxy: 'http://localhost:8080/'
-      })
-  ]
+  }
 
 };
