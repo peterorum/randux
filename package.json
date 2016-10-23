@@ -1,0 +1,11 @@
+{
+  "name": "randux",
+  "version": "1.0.0",
+  "description": "Display a random word using react+redux.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "peter@peterorum.com",
+  "license": "MIT"
+}
