@@ -5,3 +5,4 @@ dist/
 dev/
 *.sublime-*
 npm-debug.log
+.tern-port
