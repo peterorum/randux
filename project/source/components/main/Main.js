@@ -7,7 +7,7 @@ const Main = React.createClass({
     return (
       <div>
         <h1>
-          <Link to='/'>Random Word</Link>
+          <Link to='/'>Random Word234</Link>
         </h1>
       </div>
       );
