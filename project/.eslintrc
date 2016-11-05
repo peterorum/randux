@@ -1,6 +1,9 @@
 {
-  "extends": "eslint:recommended",
-  "plugins": [],
+  extends: ["eslint:recommended", "plugin:react/recommended", "standard"],
+  "plugins": [
+    "babel",
+    "react"
+  ],
   "env": {
     "es6": true,
     "node": true,
@@ -9,7 +12,9 @@
   "parserOptions": {
     "sourceType": "module"
   },
+  "parser": "babel-eslint",
   "ecmaFeatures": {
+    "jsx": true,
     "modules": true
   },
   "globals": {
@@ -22,7 +27,9 @@
   "max-depth": [2, 4],
   "max-statements": [2, {"maximum": 20}, {"ignoreTopLevelFunctions": false}],
   "no-console": 0,
-  "no-extra-semi": 0,
-  "no-constant-condition": 1
+  "no-constant-condition": 1,
+  "react/jsx-uses-react": 2,
+  "react/jsx-uses-vars": 2,
+  "react/react-in-jsx-scope": 2
   }
 }
