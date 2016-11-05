@@ -1,9 +1,10 @@
 var path = require('path');
-// var webpack = require('webpack');
+var webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
   entry: [
+    'webpack-hot-middleware/client',
     './source/randux'
   ],
   output: {
@@ -11,6 +12,10 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/assets/'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       // js

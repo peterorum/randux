@@ -1,7 +1,9 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 
 import { render } from 'react-dom';
 
 import css from './styles/styles.scss';
 
-render(<p className='red'>Fish</p>, document.getElementById('main-content'));
+import Main from './components/main/Main';
+
+render(<Main />, document.getElementById('main-content'));
