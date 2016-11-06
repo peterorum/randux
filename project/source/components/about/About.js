@@ -5,7 +5,7 @@ const About = React.createClass({
   render() {
     return (
       <p>
-        About fish
+        <a href='https://github.com/peterorum/randux'>Github Source</a>
       </p>
       );
   }
