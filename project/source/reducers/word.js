@@ -4,12 +4,20 @@ function word(state = [], action) {
 
   // get new word & update store
 
+  switch (action.type) {
 
-  if (action.type === 'UPDATE_WORD') {
-    state = words.getWord();
+    case 'UPDATE_WORD': {
+
+      return words.getWord();
+    }
+
+    default: {
+
+      return state;
+    }
+
   }
 
-  return state;
 }
 
 export default word;

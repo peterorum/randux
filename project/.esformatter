@@ -4,6 +4,10 @@
     // Ref: https://github.com/millermedeiros/esformatter/tree/master/lib/preset
     // e.g.: "preset": "jquery"
 
+    // options
+    // https://github.com/millermedeiros/esformatter/blob/master/lib/preset/default-indent.js
+
+
     "plugins": [
       "esformatter-jsx"
     ],
@@ -98,7 +102,7 @@
             "ArrowFunctionExpressionOpeningBrace": 0,
             "ArrowFunctionExpressionClosingBrace": ">=1",
             "BlockStatement": 0,
-            "BreakKeyword": ">=1",
+            "BreakKeyword": "2",
             "CallExpression": -1,
             "CallExpressionOpeningParentheses": 0,
             "CallExpressionClosingParentheses": -1,
@@ -153,9 +157,12 @@
             "ParameterDefault": 0,
             "Property": ">=1",
             "PropertyValue": 0,
-            "ReturnStatement": ">=1",
+            "ReturnStatement": "2",
             "SwitchOpeningBrace": 0,
             "SwitchClosingBrace": ">=1",
+            "SwitchCaseBlockEnd": ">=1",
+            "SwitchCaseBlockStart": 0,
+            "SwitchCaseColon": 0,
             "ThisExpression": -1,
             "ThrowStatement": ">=1",
             "TryKeyword": -1,
@@ -236,6 +243,9 @@
             "ReturnStatement": 1,
             "SwitchOpeningBrace": ">=1",
             "SwitchClosingBrace": ">=1",
+            "SwitchCaseBlockEnd": 2,
+            "SwitchCaseBlockStart": ">=1",
+            "SwitchCaseColon": 0,
             "ThisExpression": 0,
             "ThrowStatement": ">=1",
             "TryKeyword": -1,
