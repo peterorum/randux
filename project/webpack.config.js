@@ -11,6 +11,9 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/assets/'
   },
+  devServer: {
+      historyApiFallback: true
+  },
   module: {
     loaders: [
       // js
