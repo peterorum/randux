@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '../button/button';
+
 const Word = React.createClass( {
 
   render() {
@@ -12,7 +14,7 @@ const Word = React.createClass( {
         { word }
       </p>
       <div>
-        <button onClick={ () => this.props.updateWord() }>another</button>
+        <Button {...this.props}/>
       </div>
     </div>
     );
