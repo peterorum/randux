@@ -2,6 +2,10 @@ import React from 'react';
 
 import Button from '../button/button';
 
+// todo
+// https://facebook.github.io/react/docs/animation.html
+// import CSSTransitionGroup from 'react-addons-css-transition-group';
+
 const Word = React.createClass( {
 
   render() {
