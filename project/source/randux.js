@@ -14,15 +14,26 @@ import { Provider } from 'react-redux';
 
 import store, { history } from './store';
 
+// sentry error tracking
+import Raven from 'raven-js';
+import { sentryUrl, logException } from './libs/sentry';
+Raven.config( sentryUrl, {} ).install();
+
+// logException(new Error('forced error'), {
+//   email: 'peter@peterorum.com'
+// });
+
+// Raven.showReportDialog();
+
 const router = (
-  <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Word}></IndexRoute>
-        <Route path="/about" component={About}></Route>
-      </Route>
-    </Router>
-  </Provider>
+<Provider store={ store }>
+  <Router history={ history }>
+    <Route path="/" component={ App }>
+      <IndexRoute component={ Word }></IndexRoute>
+      <Route path="/about" component={ About }></Route>
+    </Route>
+  </Router>
+</Provider>
 )
 
-render(router, document.getElementById('main-content'));
+render( router, document.getElementById( 'main-content' ) );
