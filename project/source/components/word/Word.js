@@ -14,7 +14,7 @@ const Word = React.createClass( {
 
     return (
     <div>
-      <p>
+      <p className='red'>
         { word }
       </p>
       <div>
