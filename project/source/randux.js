@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'react-dom';
 
-import css from './styles/styles.scss'; // eslint-disable-line no-unused-vars
+import './styles/css'
 
 import App from './components/app/app';
 import Word from './components/word/word';

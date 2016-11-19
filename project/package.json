@@ -25,6 +25,8 @@
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-react": "^6.5.0",
     "node-sass": "^3.10.1",
+    "normalize.css": "^5.0.0",
+    "raven-js": "^3.8.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
@@ -35,11 +37,10 @@
     "redbox-react": "^1.3.2",
     "redux": "^3.6.0",
     "sass-loader": "^4.0.2",
+    "string-replace-loader": "^1.0.5",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
-  "dependencies": {
-    "raven-js": "^3.8.0"
-  }
+  "dependencies": {}
 }

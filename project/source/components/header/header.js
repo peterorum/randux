@@ -8,8 +8,8 @@ const Header = React.createClass( {
     return (
     <header>
       <h1>
-              <Link to='/'>Random Word</Link>
-            </h1>
+        <Link to='/'><img src='/images/logo.png' /></Link>
+      </h1>
     </header>
     );
   }

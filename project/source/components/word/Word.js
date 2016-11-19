@@ -13,8 +13,8 @@ const Word = React.createClass( {
     const {word} = this.props;
 
     return (
-    <div>
-      <p className='red'>
+    <div className='word'>
+      <p>
         { word }
       </p>
       <div>
