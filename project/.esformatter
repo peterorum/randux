@@ -1,12 +1,10 @@
 {
-
     // You can change the preset for any other available on ESFormatter
     // Ref: https://github.com/millermedeiros/esformatter/tree/master/lib/preset
     // e.g.: "preset": "jquery"
 
     // options
     // https://github.com/millermedeiros/esformatter/blob/master/lib/preset/default-indent.js
-
 
     "plugins": [
       "esformatter-jsx"

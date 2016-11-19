@@ -5,7 +5,7 @@ const Button = React.createClass( {
   render() {
 
     return (
-        <button onClick={ () => this.props.updateWord() }>another</button>
+    <button onClick={ () => this.props.updateWord() }>another</button>
     );
   }
 } );

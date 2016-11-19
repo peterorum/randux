@@ -13,3 +13,12 @@ export function logException(ex, context) {
   } );
   window && window.console && console.error && console.error( ex );
 }
+
+// force error example
+// import { logException } from './config/sentry';
+// logException(new Error('forced error'), {
+//   email: 'peter@peterorum.com'
+// });
+
+// show user dialog example
+// Raven.showReportDialog();

@@ -30,6 +30,10 @@
   "no-constant-condition": 1,
   "react/jsx-uses-react": 2,
   "react/jsx-uses-vars": 2,
-  "react/react-in-jsx-scope": 2
+  "react/react-in-jsx-scope": 2,
+  "semi": 0,
+  "space-in-parens": 0,
+  "space-before-function-paren": 0,
+  "padded-blocks": 0
   }
 }
