@@ -5,6 +5,6 @@ dev/
 *.sublime-*
 npm-debug.log
 .tern-port
-/images
-/icons
+images/
+icons/
 
