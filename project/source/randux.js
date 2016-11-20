@@ -2,7 +2,8 @@ import React from 'react';
 
 import { render } from 'react-dom';
 
-import './styles/css'
+import 'normalize.css';
+import './styles/styles.scss';
 
 import App from './components/app/app';
 import Word from './components/word/word';

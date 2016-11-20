@@ -1,11 +1,7 @@
-@import '../../styles/_variables';
-@import '../../styles/_mixins';
-
 .word {
   font-family: $serif;
-  font-size: 4rem;
+  font-size: 40px;
   letter-spacing: 0.2em;
   margin: 20px 0 50px 0;
   text-align: center;
-  // display: none;
 }

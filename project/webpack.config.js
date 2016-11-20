@@ -16,17 +16,17 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {
-        // sass: convert px to use rem() mixin
-        test: /\.scss$/,
-        include: path.join( __dirname, 'source' ),
-        loader: 'string-replace',
-        query: {
-          search: '^([ \t]+)([a-z\\-]*):[ \t]*([0-9]+.*px.*);$',
-          replace: '$1@include rem($2, $3);',
-          flags: 'img'
-        }
-      }
+      // {
+      //   // sass: convert px to use rem() mixin
+      //   test: /\.scss$/,
+      //   include: path.join( __dirname, 'source' ),
+      //   loader: 'string-replace',
+      //   query: {
+      //     search: '^([ \t]+)([a-z\\-]*):[ \t]*([0-9]+.*px.*);$',
+      //     replace: '$1@include rem($2, $3);',
+      //     flags: 'img'
+      //   }
+      // }
     ],
 
     loaders: [
@@ -48,8 +48,8 @@ module.exports = {
       // so each new component needs to be added to styles.scss
       {
         test: /\.scss$/,
-        include: path.join( __dirname, 'source' ),
-        loaders: [ 'style', 'css', 'sass' ]
+        include: path.join( __dirname, 'source/styles' ),
+        loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
       }
     ]
   }

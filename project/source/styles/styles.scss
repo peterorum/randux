@@ -1,7 +1,10 @@
-@import './base';
+@import './variables';
 @import './mixins';
 
-html {
-  // 1rem = 10px
-  font-size: 62.5%;
-}
+@import './base';
+
+@import '../components/main/main';
+@import '../components/header/header';
+@import '../components/word/word';
+
+
