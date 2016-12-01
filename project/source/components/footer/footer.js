@@ -6,7 +6,7 @@ const Footer = React.createClass( {
   render() {
 
     return (
-    <footer>
+    <footer role='contentinfo'>
       <Link to='/about'>about</Link>
     </footer>
     );

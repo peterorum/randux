@@ -6,7 +6,7 @@ const Header = React.createClass( {
   render() {
 
     return (
-    <header>
+    <header role='banner'>
       <h1>
         <Link to='/'><img src='/images/logo.png' /></Link>
       </h1>
