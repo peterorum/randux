@@ -1,6 +1,11 @@
 button {
   background: none;
   border: 2px solid $color-black;
+  transition: opacity 300ms ease;
+
+  &[disabled] {
+    opacity: 0.4;
+  }
 
   &.btn-svg {
     line-height: 0;

@@ -11,16 +11,35 @@ const Button = React.createClass( {
 
   render() {
 
-    var disabled = ''; // this.state.disabled ? 'disabled' : '';
+    const disabled = this.state.disabled ? 'disabled' : '';
 
     return (
-    <button className="btn-svg" disabled={ disabled } onClick={ () => this.props.updateWord() }>
+    <button className="btn-svg" disabled={ disabled } onClick={ this.onClick }>
       <svg>
         <use xlinkHref="#icon-random"></use>
       </svg>
     </button>
     );
+  },
+
+  onClick() {
+
+    // disable button
+    this.setState( {
+      disabled: true
+    } );
+
+    // reenable
+    setTimeout( () => {
+      this.setState( {
+        disabled: false
+      } );
+    }, 1000 );
+
+    // update word
+    return this.props.updateWord();
   }
+
 } );
 
 export default Button;
