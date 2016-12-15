@@ -1,10 +1,10 @@
 
 // add comment
 
-export function updateWord(word) {
+export function updateWord() {
+
   return {
-    type: 'UPDATE_WORD',
-    word
+    type: 'UPDATE_WORD'
   }
 }
 
