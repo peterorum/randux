@@ -20,6 +20,10 @@ import Raven from 'raven-js';
 import { sentryUrl } from './config/sentry';
 Raven.config( sentryUrl, {} ).install();
 
+// svgstore
+var __svg__  = { path: '../icons/**/*.svg', name: 'assets/icons/[hash].logos.svg' };
+require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
+
 const router = (
 <Provider store={ store }>
   <Router history={ history }>
