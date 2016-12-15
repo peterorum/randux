@@ -15,19 +15,7 @@ module.exports = {
     historyApiFallback: true
   },
   module: {
-    preLoaders: [
-      // {
-      //   // sass: convert px to use rem() mixin
-      //   test: /\.scss$/,
-      //   include: path.join( __dirname, 'source' ),
-      //   loader: 'string-replace',
-      //   query: {
-      //     search: '^([ \t]+)([a-z\\-]*):[ \t]*([0-9]+.*px.*);$',
-      //     replace: '$1@include rem($2, $3);',
-      //     flags: 'img'
-      //   }
-      // }
-    ],
+    preLoaders: [],
 
     loaders: [
       // js

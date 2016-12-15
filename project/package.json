@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "webpack-dev-server --inline --hot --progress --colors",
-    "start": "webpack && npm run serve",
+    "start": "npm run imagemin && webpack && npm run serve",
     "imagemin": "imagemin ../design/images/**/* --out-dir=images && imagemin ../design/icons/**/* --out-dir=icons"
   },
   "repository": {
