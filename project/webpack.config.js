@@ -21,7 +21,7 @@ module.exports = {
           { removeTitle: true }
         ]
       },
-      prefix: 'icon'
+      prefix: 'icon-'
     })
   ],
   module: {

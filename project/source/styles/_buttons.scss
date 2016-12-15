@@ -2,8 +2,13 @@ button {
   background: none;
   border: 2px solid $color-black;
 
-  .svg-icon svg {
-    width: 50px;
-    height: 50px;
+  &.btn-svg {
+    line-height: 0;
+    padding: 10px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
   }
 }
