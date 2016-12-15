@@ -7,9 +7,7 @@ const Header = React.createClass( {
 
     return (
     <header role='banner'>
-      <h1>
-        <Link to='/'><img src='/images/logo.png' /></Link>
-      </h1>
+        <Link className='image-link' to='/'><img src='/images/logo.png' /></Link>
     </header>
     );
   }

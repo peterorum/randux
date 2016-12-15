@@ -7,7 +7,10 @@ const Footer = React.createClass( {
 
     return (
     <footer role='contentinfo'>
-      <Link to='/about'>about</Link>
+      <p>
+        <Link to='/about'>about</Link>
+      </p>
+      <p className='small-text'>&copy; 2017 Seraline P/L</p>
     </footer>
     );
   }
