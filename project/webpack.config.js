@@ -1,5 +1,5 @@
 var path = require( 'path' );
-var svgStore = require('webpack-svgstore-plugin');
+var svgStore = require( 'webpack-svgstore-plugin' );
 
 module.exports = {
   devtool: 'source-map',
@@ -15,14 +15,9 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new svgStore({
-      svgoOptions: {
-        plugins: [
-          { removeTitle: true }
-        ]
-      },
+    new svgStore( {
       prefix: 'icon-'
-    })
+    } )
   ],
   module: {
     preLoaders: [],

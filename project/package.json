@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "serve": "webpack-dev-server --inline --hot --progress --colors",
-    "start": "npm run imagemin && webpack && npm run serve",
-    "imagemin": "imagemin ../design/images/**/* --out-dir=images && imagemin ../design/icons/**/* --out-dir=icons"
+    "start": "npm run images && webpack && npm run serve",
+    "images": "npm run imagemin && npm run svgo",
+    "imagemin": "imagemin ../design/images/**/* --out-dir=images",
+    "svgo": "svgo --input=../design/icons --output=icons --config=./.svgo.yml"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "redux": "^3.6.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "svgo": "^0.7.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2",
     "webpack-svgstore-plugin": "^3.0.6"
