@@ -8,7 +8,8 @@
     "start": "npm run images && webpack && npm run serve",
     "images": "npm run imagemin && npm run svgo",
     "imagemin": "imagemin ../design/images/**/* --out-dir=images",
-    "svgo": "svgo --input=../design/icons --output=icons --config=./.svgo.yml"
+    "svgo": "svgo --input=../design/icons --output=images/icons --config=./.svgo.yml",
+    "test": "mocha './tests/**/*.spec.js' --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -51,7 +52,11 @@
     "svgo": "^0.7.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2",
-    "webpack-svgstore-plugin": "^3.0.6"
+    "webpack-svgstore-plugin": "^3.0.6",
+    "expect": "^1.14.0",
+    "expect-jsx": "^2.3.0",
+    "mocha": "^2.4.5",
+    "react-addons-test-utils": "^0.14.7"
   },
   "dependencies": {}
 }

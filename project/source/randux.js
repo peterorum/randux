@@ -22,7 +22,7 @@ import { sentryUrl } from './config/sentry';
 Raven.config( sentryUrl, {} ).install();
 
 // svgstore
-var __svg__ = { path: '../icons/**/*.svg', name: 'assets/icons/[hash].icons.svg' };
+var __svg__ = { path: '../images/icons/**/*.svg', name: 'assets/images/icons/[hash].icons.svg' };
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 
 const router = (
