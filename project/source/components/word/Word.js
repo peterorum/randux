@@ -1,10 +1,7 @@
 import React from 'react';
 
 import Button from '../button/button';
-
-// todo
-// https://facebook.github.io/react/docs/animation.html
-// import CSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Word = React.createClass( {
 
@@ -14,9 +11,12 @@ const Word = React.createClass( {
 
     return (
     <div className='word'>
-      <p>
-        { word }
-      </p>
+      <ReactCSSTransitionGroup transitionName="new-word" transitionEnterTimeout={ 500 } transitionLeaveTimeout={ 0 }>
+        <p key={ word }>
+          { word }
+        </p>
+      </ReactCSSTransitionGroup>
+      { /* button */ }
       <div className='btn-container'>
         <Button {...this.props}/>
       </div>

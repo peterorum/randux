@@ -8,4 +8,20 @@
   .btn-container {
     margin-top: 50px;
   }
+
+  .new-word-enter {
+    opacity: 0.01;
+  }
+
+  .new-word-enter.new-word-enter-active {
+    opacity: 1;
+    // duration must match associated transitionEnterTimeout
+    transition: opacity 500ms ease-in;
+  }
+
+  .new-word-leave {
+    display: none;
+  }
+
 }
+
