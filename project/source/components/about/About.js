@@ -6,7 +6,7 @@ const About = React.createClass( {
 
     return (
     <p>
-      <a href='https://github.com/peterorum/randux'>Github Source</a>
+      <a href='https://github.com/peterorum/randux' target='_blank'>Github Source</a>
     </p>
     );
   }

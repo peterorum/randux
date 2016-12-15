@@ -35,7 +35,11 @@ module.exports = {
         include: path.join( __dirname, 'node_modules/normalize.css' ),
         loaders: [ 'style', 'css' ]
       },
-
+      // images
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: "file?name=[path][name].[ext]"
+      },
       // css
       // assume one styles.scss that imports all it needs from the components
       // so each new component needs to be added to styles.scss

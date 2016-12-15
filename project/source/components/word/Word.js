@@ -17,7 +17,7 @@ const Word = React.createClass( {
       <p>
         { word }
       </p>
-      <div>
+      <div className='btn-container'>
         <Button {...this.props}/>
       </div>
     </div>
