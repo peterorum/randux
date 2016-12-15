@@ -11,7 +11,7 @@ const Word = React.createClass( {
 
     return (
     <div className='word'>
-      <ReactCSSTransitionGroup transitionName="new-word" transitionEnterTimeout={ 500 } transitionLeaveTimeout={ 0 }>
+      <ReactCSSTransitionGroup transitionName={ { enter: 'animated', enterActive: 'flip', leave: 'hidden' } } transitionEnterTimeout={ 1000 } transitionLeaveTimeout={ 0 }>
         <p key={ word }>
           { word }
         </p>

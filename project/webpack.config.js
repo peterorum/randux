@@ -35,6 +35,12 @@ module.exports = {
         include: path.join( __dirname, 'node_modules/normalize.css' ),
         loaders: [ 'style', 'css' ]
       },
+      // add animate.css
+      {
+        test: /\.css$/,
+        include: path.join( __dirname, 'node_modules/animate.css' ),
+        loaders: [ 'style', 'css' ]
+      },
       // images
       {
         test: /\.(png|jpg|svg)$/,
