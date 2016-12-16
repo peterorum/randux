@@ -1,8 +1,8 @@
 # randux
-Basic react+redux setup with es6/babel, webpack, sass, postcss, eslint, jscs, sass-lint, bower, mocha, chai, express.
+Boilerplate react+redux setup with es6/babel, webpack, sass, postcss, eslint, jscs, sass-lint, bower, mocha, chai, express.
 
 ## features
-* image optimzation with imagemin
+* image optimization with imagemin
 * svg optimization with svgo
 * react hot module reload
 * development & production builds using webpack
@@ -11,7 +11,6 @@ Basic react+redux setup with es6/babel, webpack, sass, postcss, eslint, jscs, sa
 * tests for components, actions & reducers
 * express server for use on production server
 
-`npm run images` must be run whenever a new image or svg is added under the design folder.
 
 ## installation
 
@@ -22,4 +21,5 @@ Basic react+redux setup with es6/babel, webpack, sass, postcss, eslint, jscs, sa
 
 1. npm run build
 2. or run ./deploy
-2. see deploy script to see what files & fodlers must be deployed to a remote server
+3. see deploy script to see what files & folders must be deployed to a remote server
+4. `npm run images` must be run whenever a new image or svg is added under the design folder.
