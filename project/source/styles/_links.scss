@@ -19,12 +19,9 @@
 
 // accessible skip to main content
 .skip-link {
-  position: absolute;
-  top: 0;
-  right: 100%;
   color: $color-black;
 
   &:focus {
-    right: auto;
+    right: auto !important;;
   }
 }
