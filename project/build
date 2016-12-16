@@ -1,0 +1,22 @@
+#!/bin/sh
+
+cd ~/Projects/randux/project
+pwd
+npm run build
+
+# put everything under dist
+cd dist
+
+mkdir static
+mv bundle.* static/
+
+mkdir images
+cp -r ../images/ ./images/
+
+cp ../index.html .
+cp ../server/* .
+
+# move icons
+mkdir static/assets
+mv assets/images static/assets/images
+rmdir assets
