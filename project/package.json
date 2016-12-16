@@ -9,7 +9,7 @@
     "images": "npm run imagemin && npm run svgo",
     "imagemin": "imagemin ../design/images/**/* --out-dir=images",
     "svgo": "svgo --input=../design/svg --output=images/icons --config=./.svgo.yml",
-    "test": "mocha './tests/**/*.spec.js' --compilers js:babel-core/register"
+    "test": "mocha --watch --recursive './source/**/*.spec.js' --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
