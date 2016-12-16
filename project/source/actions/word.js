@@ -1,6 +1,3 @@
-
-// add comment
-
 export function updateWord() {
 
   return {

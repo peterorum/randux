@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import word from '../../source/reducers/word';
+import wordReducer from './word';
 
 describe( 'Word reducer', function() {
 
@@ -9,7 +9,7 @@ describe( 'Word reducer', function() {
       type: 'UPDATE_WORD'
     };
 
-    const actual = word( [], action );
+    const actual = wordReducer( [], action );
 
     expect( actual ).to.be.a( 'string' );
     expect( actual.length ).to.be.above( 0 );
@@ -21,8 +21,8 @@ describe( 'Word reducer', function() {
       type: 'UPDATE_WORD'
     };
 
-    const word1 = word( [], action );
-    const word2 = word( [], action );
+    const word1 = wordReducer( [], action );
+    const word2 = wordReducer( [], action );
 
     expect( word1 ).to.not.equal( word2 );
   } );

@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "serve": "webpack-dev-server --inline --hot --progress --colors",
-    "start": "npm run images && webpack && npm run serve",
+    "start": "NODE_ENV=development npm run images && webpack && npm run serve",
     "images": "npm run imagemin && npm run svgo",
     "imagemin": "imagemin ../design/images/**/* --out-dir=images",
     "svgo": "svgo --input=../design/svg --output=images/icons --config=./.svgo.yml",
-    "test": "mocha --watch --recursive './source/**/*.spec.js' --compilers js:babel-core/register"
+    "test": "NODE_ENV=production mocha --watch --recursive './source/**/*.spec.js' --compilers js:babel-core/register",
   },
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
     "raven-js": "^3.8.0",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.4.1",
-    "react-addons-test-utils": "^0.14.7",
+    "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^3.0.0",
