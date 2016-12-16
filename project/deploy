@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd ~/Projects/randux/project
+pwd
+npm run build
+
+rsync -crv index.html images server/* functal:/home/ec2-user/randux/
+rsync -crv dist/* functal:/home/ec2-user/randux/static
