@@ -2,6 +2,7 @@
 
 import Raven from 'raven-js';
 
+// expect account keys to be in env. add to ~/.bash_profile or similar
 export const sentryUrl = `https://${process.env.sentryKey}@sentry.io/${process.env.sentryApp}`;
 
 export function logException(ex, context) {

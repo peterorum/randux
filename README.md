@@ -1,28 +1,35 @@
 # randux
-Boilerplate react+redux setup with es6/babel, webpack, sass, postcss, eslint, jscs, sass-lint, bower, mocha, chai, express.
+Boilerplate react+redux setup with webpack, es6/babel, sass, postcss, eslint, jscs, sass-lint, bower, mocha, chai, express.
 
 ## features
-* image optimization with imagemin
-* svg optimization with svgo
-* react hot module reload
 * development & production builds using webpack
+* react hot module reload with webpack dev server
 * normalize.css
 * using animate.css with react css transformations
-* tests for components, actions & reducers
+* mocha+chai tests for components, actions & reducers
 * express server for use on production server
+* image optimization with imagemin
+* svg optimization with svgo
 
 ## installation
 
 1. npm install
 2. npm run start
+3. view on localhost:8080
 
 ## tests
 
 In a separate terminal, run `npm test`. This runs the mocha+chai tests, and keeps it running watching files.
 
-## note
+## notes
 
 `npm run images` must be run manually whenever a new image or svg is added under the design folder. This optimizes & copies the files to the source images folder.
+
+To use the [sentry.io](https://sentry.io) error logging, you will need to get account keys from there & add them to your environment. eg in ~/.bash_profile
+
+  export sentryKey="abcd...."
+  export sentryApp="123456"
+
 
 ## build
 

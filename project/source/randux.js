@@ -19,11 +19,18 @@ import store, { history } from './store';
 // sentry error tracking
 import Raven from 'raven-js';
 import { sentryUrl } from './config/sentry';
-Raven.config( sentryUrl, {} ).install();
+
+// expect account keys to be in env
+if (process.env.sentryKey) {
+  Raven.config( sentryUrl, {} ).install();
+}
 
 // svgstore
-var __svg__ = { path: '../images/icons/**/*.svg', name: 'assets/images/icons/[hash].icons.svg' };
-require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
+var __svg__ = {
+  path: '../images/icons/**/*.svg',
+  name: 'assets/images/icons/[hash].icons.svg'
+};
+require( 'webpack-svgstore-plugin/src/helpers/svgxhr' )( __svg__ );
 
 const router = (
 <Provider store={ store }>
