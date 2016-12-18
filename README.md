@@ -33,7 +33,7 @@ To use the [sentry.io](https://sentry.io) error logging, you will need to get ac
 
 ## build
 
-Build & deployment scripts are for osx.
+Build & deployment scripts are for osx, and assume the project is under ~/Projects/randux.
 
 Run the `build` script
 
