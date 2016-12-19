@@ -14,7 +14,7 @@ mkdir images
 cp -r ../images/ ./images/
 
 cp ../index.html .
-cp ../server/* .
+cp ../server/serve* .
 
 # move icons
 mkdir static/assets
