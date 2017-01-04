@@ -14,7 +14,7 @@ mkdir images
 cp -r ../images/ ./images/
 
 # create critical css version
-../node_modules/.bin/critical ../index.html --base . --inline > index.html
+../node_modules/.bin/critical ../index.html --base . --extract --inlineImages --inline > index.html
 
 cp ../server/serve* .
 
