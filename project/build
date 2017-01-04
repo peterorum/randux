@@ -13,7 +13,9 @@ mv bundle.* static/
 mkdir images
 cp -r ../images/ ./images/
 
-cp ../index.html .
+# create critical css version
+../node_modules/.bin/critical ../index.html --base . --inline > index.html
+
 cp ../server/serve* .
 
 # move icons
