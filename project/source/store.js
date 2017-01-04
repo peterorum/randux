@@ -1,18 +1,41 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
+import { Map, fromJS } from 'immutable';
+import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 
 import rootReducer from './reducers/index';
 
-import words from './data/words';
+// import words from './data/words';
+import { updateWord } from './actions/word.js';
+
+// const defaultState = {
+//   content: fromJS( {
+//     word: ''
+//   } )
+// };
 
 const defaultState = {
-  word: words.getWord()
+  word: fromJS( {
+    word: 'fish'
+  } )
 };
 
-const store = createStore( rootReducer, defaultState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+
+//----------- create store
+
+const middleware = [ thunk ];
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push( createLogger() )
+}
+
+const store = createStore( rootReducer, defaultState, composeEnhancers(
+  applyMiddleware( ...middleware )
+) );
 
 export const history = syncHistoryWithStore( browserHistory, store );
 
@@ -22,5 +45,9 @@ if (module.hot) {
     store.replaceReducer( nextRootReducer );
   } );
 }
+
+//---------- preload data
+
+store.dispatch( updateWord() );
 
 export default store;
