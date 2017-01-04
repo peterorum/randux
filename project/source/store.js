@@ -7,21 +7,13 @@ import createLogger from 'redux-logger';
 
 import rootReducer from './reducers/index';
 
-// import words from './data/words';
 import { updateWord } from './actions/word.js';
-
-// const defaultState = {
-//   content: fromJS( {
-//     word: ''
-//   } )
-// };
 
 const defaultState = {
   word: fromJS( {
     word: 'fish'
   } )
 };
-
 
 //----------- create store
 
