@@ -1,6 +1,7 @@
 import words from '../data/words';
+import { Map } from 'immutable';
 
-function word(state = [], action) {
+function word(state = Map({}), action) {
 
   // get new word & update store
 
@@ -8,7 +9,10 @@ function word(state = [], action) {
 
     case 'UPDATE_WORD': {
 
-      return words.getWord();
+      let newWord = words.getWord();
+      let newState = state.set('word', newWord);
+
+      return newState;
     }
 
     default: {

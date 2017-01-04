@@ -1,5 +1,5 @@
 # randux
-Boilerplate react+redux setup with webpack, es6/babel, sass, postcss, eslint, jscs, sass-lint, bower, mocha, chai, express.
+Boilerplate react+redux setup with immutable, webpack, es6/babel, sass, postcss, eslint, jscs, sass-lint, bower, mocha, chai, express.
 
 ## features
 * development & production builds using webpack

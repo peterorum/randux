@@ -8,12 +8,13 @@ const Word = React.createClass( {
   render() {
 
     const {word} = this.props;
+    const nextWord = word.get( 'word' );
 
     return (
     <div className='word'>
       <ReactCSSTransitionGroup transitionName={ { enter: 'animated', enterActive: 'flip', leave: 'hidden' } } transitionEnterTimeout={ 1000 } transitionLeaveTimeout={ 0 }>
-        <p key={ word }>
-          { word }
+        <p key={ nextWord }>
+          { nextWord }
         </p>
       </ReactCSSTransitionGroup>
       { /* button */ }
