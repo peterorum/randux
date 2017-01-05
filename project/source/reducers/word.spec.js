@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import wordReducer from './word';
-import { Map } from 'immutable';
 
 describe( 'Word reducer', function() {
 

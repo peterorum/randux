@@ -18,7 +18,9 @@
     "modules": true
   },
   "globals": {
-  "_": false
+  "_": false,
+  "describe": false,
+  "it": false
   },
   "rules": {
   "no-mixed-spaces-and-tabs": 0,
@@ -34,6 +36,7 @@
   "semi": 0,
   "space-in-parens": 0,
   "space-before-function-paren": 0,
-  "padded-blocks": 0
+  "padded-blocks": 0,
+  "quotes": 0
   }
 }
