@@ -44,7 +44,7 @@ module.exports = {
       // images
       {
         test: /\.(png|jpg|svg)$/,
-        loader: "file?name=[path][name].[ext]"
+        loader: 'file?name=[path][name].[ext]'
       },
       // css
       // assume one styles.scss that imports all it needs from the components
