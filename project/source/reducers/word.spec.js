@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import wordReducer from './word';
+import { Map } from 'immutable';
 
 describe( 'Word reducer', function() {
 
@@ -9,10 +10,10 @@ describe( 'Word reducer', function() {
       type: 'UPDATE_WORD'
     };
 
-    const actual = wordReducer( [], action );
+    const actual = wordReducer( undefined, action );
 
-    expect( actual ).to.be.a( 'string' );
-    expect( actual.length ).to.be.above( 0 );
+    expect( actual.get('word') ).to.be.a( 'string' );
+    expect( actual.get('word').length ).to.be.above( 0 );
   } );
 
   it( 'return a different word', function() {
@@ -21,8 +22,8 @@ describe( 'Word reducer', function() {
       type: 'UPDATE_WORD'
     };
 
-    const word1 = wordReducer( [], action );
-    const word2 = wordReducer( [], action );
+    const word1 = wordReducer( undefined, action ).get('word');
+    const word2 = wordReducer( undefined, action ).get('word');
 
     expect( word1 ).to.not.equal( word2 );
   } );

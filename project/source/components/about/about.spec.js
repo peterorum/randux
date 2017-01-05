@@ -19,7 +19,7 @@ describe('About Component', function () {
     renderer.render(<About {...props} />)
     result = renderer.getRenderOutput();
 
-    console.log(result.props.children);
+    // console.log(result.props.children);
   });
 
   it('should return a p element',()=>{
