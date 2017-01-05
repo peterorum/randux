@@ -26,4 +26,8 @@ const Word = React.createClass( {
   }
 } );
 
+Word.propTypes = {
+  word: React.PropTypes.instanceOf(Map).isRequired
+};
+
 export default Word;
