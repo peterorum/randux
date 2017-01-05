@@ -1,19 +1,17 @@
 .word {
-  font-family: $serif;
+  font-family: --serif;
   font-size: 40px;
   letter-spacing: 0.2em;
   margin: 20px 0 60px 0;
   text-align: center;
 
-  .btn-container {
+  & .btn-container {
     margin-top: 50px;
   }
 
-  p {
-    // override animate.css
+  & p {
+    /* override animate.css */
     animation-duration: 1000ms;
     animation-timing-function: ease-out;
   }
-
 }
-

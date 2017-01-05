@@ -1,0 +1,31 @@
+@mixin anchor var(--color-black), var(--color-white);
+
+/* external links */
+
+:root {
+  --external-icon-size: 10px;
+}
+
+[href^='http']:not([href*='codeindeed.com'])::after {
+  display: inline-block;
+  width: var(--external-icon-size);
+  height: var(--external-icon-size);
+  background-color: var(--color-black);
+  mask-image: url("/images/icons/external-link.svg");
+  mask-size: cover;
+  transform: translate(3px, -5px);
+  content: '(external link)';
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: var(--external-icon-size);
+}
+
+/* accessible skip to main content */
+
+.skip-link {
+  color: var(--color-black);
+
+  &:focus {
+    right: auto !important;
+  }
+}

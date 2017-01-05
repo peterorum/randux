@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 import 'normalize.css';
 import 'animate.css';
-import './styles/styles.scss';
+import './styles/styles.css';
 
 import App from './components/app/app';
 import Word from './components/word/word';

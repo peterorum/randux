@@ -1,8 +1,8 @@
 @import './variables';
-@import './mixins';
 
 @import './base';
 @import './colors';
+@import './mixins';
 
 @import './buttons';
 @import './links';
@@ -11,5 +11,3 @@
 @import '../components/main/main';
 @import '../components/header/header';
 @import '../components/word/word';
-
-

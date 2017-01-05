@@ -55,9 +55,9 @@ module.exports = {
       },
       // css
       {
-        test: /\.scss$/,
-        include: path.join( __dirname, 'source/styles' ),
-        loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
+        test: /\.css$/,
+        include: path.join( __dirname, 'source/styles/styles.css' ),
+        loaders: [ 'style', 'css', 'postcss-loader' ]
       }
     ]
   }

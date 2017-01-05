@@ -1,9 +1,14 @@
 module.exports = {
   plugins: [
-    // autoprefixer
-    require( 'autoprefixer' )( {
-      browsers: [ 'last 2 versions' ]
-    } ),
+    // @import
+    require('postcss-import'),
+
+    // mixins
+    require( 'postcss-mixins' )(),
+    require( 'postcss-simple-vars' )(),
+
+    // cssnext
+    require( 'postcss-cssnext' )(),
 
     // convert px tp rem
     // use PX to skip
