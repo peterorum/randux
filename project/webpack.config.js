@@ -12,7 +12,6 @@ module.exports = {
     publicPath: '/static/'
   },
   devServer: {
-    colors: true,
     historyApiFallback: true
   },
   plugins: [
