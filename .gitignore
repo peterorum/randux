@@ -8,3 +8,6 @@ npm-debug.log
 
 images/
 !design/images/
+
+# generated
+index.html
