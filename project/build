@@ -7,7 +7,7 @@ npm run build
 # put everything under dist
 cd dist
 
-mkdir static
+mkdir -p static
 mv bundle.* static/
 
 mkdir images

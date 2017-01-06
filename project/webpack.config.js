@@ -1,5 +1,9 @@
 var path = require( 'path' );
 var svgStore = require( 'webpack-svgstore-plugin' );
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+var extractCss = new ExtractTextPlugin('styles.css');
+var extractCssLibs = new ExtractTextPlugin('libs.css');
 
 module.exports = {
   devtool: 'source-map',
@@ -17,7 +21,9 @@ module.exports = {
   plugins: [
     new svgStore( {
       prefix: 'icon-'
-    } )
+    } ),
+    extractCssLibs,
+    extractCss
   ],
   module: {
     preLoaders: [],
@@ -34,13 +40,15 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/normalize.css' ),
-        loaders: [ 'style', 'css' ]
+        // loaders: [ 'style', 'css' ]
+        loader:extractCssLibs.extract('style', 'css')
       },
       // add animate.css
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/animate.css' ),
-        loaders: [ 'style', 'css' ]
+        // loaders: [ 'style', 'css' ]
+        loader:extractCssLibs.extract('style', 'css')
       },
       // images
       {
@@ -52,8 +60,9 @@ module.exports = {
       // so each new component needs to be added to styles.scss
       {
         test: /\.scss$/,
-        include: path.join( __dirname, 'source/styles' ),
-        loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
+        include: path.join( __dirname, 'source/styles/styles.scss' ),
+        // loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
+        loader:extractCss.extract('style', 'css!postcss!sass')
       }
     ]
   }

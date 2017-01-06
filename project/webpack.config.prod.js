@@ -1,6 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require( 'path' );
+var webpack = require( 'webpack' );
 var svgStore = require( 'webpack-svgstore-plugin' );
+var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
+
+var extractCss = new ExtractTextPlugin( 'static/styles.css' );
+var extractCssLibs = new ExtractTextPlugin( 'static/libs.css' );
 
 module.exports = {
   devtool: 'source-map',
@@ -8,25 +12,27 @@ module.exports = {
     './source/randux'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join( __dirname, 'dist' ),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.DefinePlugin({
+    new webpack.DefinePlugin( {
       'process.env': {
         'NODE_ENV': "'production'"
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
+    } ),
+    new webpack.optimize.UglifyJsPlugin( {
       compressor: {
         warnings: false
       }
-    }),
+    } ),
     new svgStore( {
       prefix: 'icon-'
-    } )
+    } ),
+    extractCssLibs,
+    extractCss
   ],
   module: {
     loaders: [
@@ -40,13 +46,16 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/normalize.css' ),
-        loaders: [ 'style', 'css' ]
+        // loaders: [ 'style', 'css' ]
+        loader: extractCssLibs.extract( 'style', 'css!postcss!sass' )
+
       },
       // add animate.css
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/animate.css' ),
-        loaders: [ 'style', 'css' ]
+        // loaders: [ 'style', 'css' ]
+        loader: extractCssLibs.extract( 'style', 'css!postcss!sass' )
       },
       // images
       {
@@ -56,8 +65,8 @@ module.exports = {
       // css
       {
         test: /\.scss$/,
-        include: path.join( __dirname, 'source/styles' ),
-        loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
+        include: path.join( __dirname, 'source/styles/styles.scss' ),
+        loader: extractCss.extract( 'style', 'css!postcss!sass' )
       }
     ]
   }
