@@ -1,6 +1,7 @@
 var path = require( 'path' );
 var svgStore = require( 'webpack-svgstore-plugin' );
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var extractCss = new ExtractTextPlugin('styles.css');
 var extractCssLibs = new ExtractTextPlugin('libs.css');
@@ -23,7 +24,11 @@ module.exports = {
       prefix: 'icon-'
     } ),
     extractCssLibs,
-    extractCss
+    extractCss,
+    new HtmlWebpackPlugin({
+      template: 'index.template.html',
+      filename: '../index.html'
+    })
   ],
   module: {
     preLoaders: [],

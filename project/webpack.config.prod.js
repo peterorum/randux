@@ -2,9 +2,10 @@ var path = require( 'path' );
 var webpack = require( 'webpack' );
 var svgStore = require( 'webpack-svgstore-plugin' );
 var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var extractCss = new ExtractTextPlugin( 'static/styles.css' );
-var extractCssLibs = new ExtractTextPlugin( 'static/libs.css' );
+var extractCss = new ExtractTextPlugin( 'styles-[contenthash].css' );
+var extractCssLibs = new ExtractTextPlugin( 'libs-[contenthash].css' );
 
 module.exports = {
   devtool: 'source-map',
@@ -13,7 +14,7 @@ module.exports = {
   ],
   output: {
     path: path.join( __dirname, 'dist' ),
-    filename: 'bundle.js',
+    filename: 'bundle-[hash].js',
     publicPath: '/static/'
   },
   plugins: [
@@ -32,7 +33,10 @@ module.exports = {
       prefix: 'icon-'
     } ),
     extractCssLibs,
-    extractCss
+    extractCss,
+    new HtmlWebpackPlugin({
+      template: 'index.template.html'
+    })
   ],
   module: {
     loaders: [
