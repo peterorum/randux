@@ -27,7 +27,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        include: path.join( __dirname, 'source' )
+        include: path.join( __dirname, 'source' ),
+        exclude: /node_modules/
       },
       // add normalize.css
       {
