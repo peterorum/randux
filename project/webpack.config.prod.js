@@ -34,6 +34,7 @@ module.exports = {
     } ),
     extractCssLibs,
     extractCss,
+    // creates a new index.html under dist with the hashed bundles
     new HtmlWebpackPlugin({
       template: 'index.template.html'
     })

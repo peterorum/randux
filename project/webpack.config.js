@@ -25,6 +25,8 @@ module.exports = {
     } ),
     extractCssLibs,
     extractCss,
+    // create a new index.html in the root folder based on the template
+    // so that bundles etc can be injected, and hashed ones can be injected in production
     new HtmlWebpackPlugin({
       template: 'index.template.html',
       filename: '../index.html'
