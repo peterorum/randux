@@ -9,9 +9,7 @@ class Button extends React.Component {
       disabled: false
     };
 
-    this.onClick = this.onClick.bind(this);
   }
-
 
   render() {
 
@@ -26,7 +24,7 @@ class Button extends React.Component {
     );
   }
 
-  onClick() {
+  onClick = () => {
 
     // disable button
     this.setState( {
@@ -44,7 +42,6 @@ class Button extends React.Component {
 
     return this.props.updateWord();
   }
-
 }
 
 export default Button;
