@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Header = React.createClass( {
+class Header extends React.Component {
 
   render() {
 
@@ -11,6 +11,6 @@ const Header = React.createClass( {
     </header>
     );
   }
-} );
+}
 
 export default Header;

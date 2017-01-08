@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
-const Main = React.createClass( {
+class Main extends React.Component {
 
   render() {
 
@@ -15,6 +15,6 @@ const Main = React.createClass( {
     </div>
     );
   }
-} );
+}
 
 export default Main;

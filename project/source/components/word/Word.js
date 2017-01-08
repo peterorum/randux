@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../button/button';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-const Word = React.createClass( {
+class Word extends React.Component {
 
   render() {
 
@@ -24,10 +24,11 @@ const Word = React.createClass( {
     </div>
     );
   }
-} );
+}
 
 Word.propTypes = {
-  word: React.PropTypes.instanceOf(Map).isRequired
+  // word: React.PropTypes.instanceOf(Map).isRequired
+  word: React.PropTypes.object
 };
 
 export default Word;

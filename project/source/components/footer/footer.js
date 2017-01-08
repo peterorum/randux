@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Footer = React.createClass( {
+class Footer extends React.Component {
 
   render() {
 
@@ -14,7 +14,7 @@ const Footer = React.createClass( {
     </footer>
     );
   }
-} );
+}
 
 export default Footer;
 

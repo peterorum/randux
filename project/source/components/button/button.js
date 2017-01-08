@@ -1,13 +1,17 @@
 import React from 'react';
 
-const Button = React.createClass( {
+class Button extends React.Component {
 
-  getInitialState() {
+  constructor(props) {
+    super( props );
 
-    return {
+    this.state = {
       disabled: false
     };
-  },
+
+    this.onClick = this.onClick.bind(this);
+  }
+
 
   render() {
 
@@ -20,7 +24,7 @@ const Button = React.createClass( {
       </svg>
     </button>
     );
-  },
+  }
 
   onClick() {
 
@@ -37,10 +41,11 @@ const Button = React.createClass( {
     }, 1000 );
 
     // update word
+
     return this.props.updateWord();
   }
 
-} );
+}
 
 export default Button;
 
