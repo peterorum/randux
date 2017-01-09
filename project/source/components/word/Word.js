@@ -5,6 +5,11 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Word extends React.Component {
 
+  static propTypes = {
+    word: React.PropTypes.object
+    // word: React.PropTypes.instanceOf(Map).isRequired
+  };
+
   render() {
 
     const {word} = this.props;
@@ -25,10 +30,5 @@ class Word extends React.Component {
     );
   }
 }
-
-Word.propTypes = {
-  // word: React.PropTypes.instanceOf(Map).isRequired
-  word: React.PropTypes.object
-};
 
 export default Word;
