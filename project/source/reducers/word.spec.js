@@ -1,10 +1,9 @@
 import { expect } from 'chai';
 import wordReducer from './word';
-import { Map } from 'immutable';
 
-describe( 'Word reducer', function() {
+describe( 'Word reducer', () => {
 
-  it( 'should make a word', function() {
+  it( 'should make a word', () => {
 
     const action = {
       type: 'UPDATE_WORD'
@@ -12,18 +11,18 @@ describe( 'Word reducer', function() {
 
     const actual = wordReducer( undefined, action );
 
-    expect( actual.get('word') ).to.be.a( 'string' );
-    expect( actual.get('word').length ).to.be.above( 0 );
+    expect( actual.get( 'word' ) ).to.be.a( 'string' );
+    expect( actual.get( 'word' ).length ).to.be.above( 0 );
   } );
 
-  it( 'return a different word', function() {
+  it( 'return a different word', () => {
 
     const action = {
       type: 'UPDATE_WORD'
     };
 
-    const word1 = wordReducer( undefined, action ).get('word');
-    const word2 = wordReducer( undefined, action ).get('word');
+    const word1 = wordReducer( undefined, action ).get( 'word' );
+    const word2 = wordReducer( undefined, action ).get( 'word' );
 
     expect( word1 ).to.not.equal( word2 );
   } );

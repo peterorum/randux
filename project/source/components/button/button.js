@@ -30,6 +30,8 @@ class Button extends React.Component {
 
   onClick = () => {
 
+    const disabledDuration = 1000;
+
     // disable button
     this.setState( {
       disabled: true
@@ -40,7 +42,7 @@ class Button extends React.Component {
       this.setState( {
         disabled: false
       } );
-    }, 1000 );
+    }, disabledDuration );
 
     // update word
 

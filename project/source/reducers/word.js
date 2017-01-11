@@ -1,5 +1,5 @@
 import words from '../data/words';
-import { Map } from 'immutable';
+import {Map} from 'immutable';
 
 function word(state = Map({}), action) {
 
@@ -9,8 +9,8 @@ function word(state = Map({}), action) {
 
     case 'UPDATE_WORD': {
 
-      let newWord = words.getWord();
-      let newState = state.set('word', newWord);
+      const newWord = words.getWord();
+      const newState = state.set('word', newWord);
 
       return newState;
     }

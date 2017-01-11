@@ -14,7 +14,8 @@
             "imports": [
               "react", "redbox-react"
             ] }]
-        }]
+        }],
+        "transform-flow-comments"
       ]
     },
     "production": {

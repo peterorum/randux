@@ -5877,6 +5877,4 @@ const words = [
   "zoom"
 ];
 
-export default {
-  getWord
-}
+export default {getWord}

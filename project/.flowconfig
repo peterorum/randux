@@ -1,0 +1,10 @@
+[include]
+./source/temp.js
+
+[ignore]
+./dist/.*
+./dev/.*
+.*/node_modules/jsonlint/.*
+
+[options]
+module.name_mapper='^.*\.scss$' -> 'css-module-flow'

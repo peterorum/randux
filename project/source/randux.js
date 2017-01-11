@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import { render } from 'react-dom';
@@ -26,7 +28,7 @@ if (process.env.sentryKey) {
 }
 
 // svgstore
-var __svg__ = {
+const __svg__ = {
   path: '../images/icons/**/*.svg',
   name: 'assets/images/icons/[hash].icons.svg'
 };

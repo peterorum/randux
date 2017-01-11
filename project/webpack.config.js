@@ -1,10 +1,11 @@
-var path = require( 'path' );
-var SvgStore = require( 'webpack-svgstore-plugin' );
-var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
-var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+const path = require( 'path' );
+const SvgStore = require( 'webpack-svgstore-plugin' );
+const ExtractTextPlugin = require( "extract-text-webpack-plugin" );
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+const FlowBabelWebpackPlugin = require( 'flow-babel-webpack-plugin' );
 
-var extractCss = new ExtractTextPlugin( 'styles.css' );
-var extractCssLibs = new ExtractTextPlugin( 'libs.css' );
+const extractCss = new ExtractTextPlugin( 'styles.css' );
+const extractCssLibs = new ExtractTextPlugin( 'libs.css' );
 
 module.exports = {
   devtool: 'source-map',
@@ -30,7 +31,8 @@ module.exports = {
     new HtmlWebpackPlugin( {
       template: 'index.template.html',
       filename: '../index.html'
-    } )
+    } ),
+    new FlowBabelWebpackPlugin()
   ],
   module: {
 
@@ -38,7 +40,7 @@ module.exports = {
       // js
       {
         test: /\.js$/,
-        loaders: [ 'babel', 'eslint'],
+        loaders: [ 'babel', 'eslint' ],
         include: path.join( __dirname, 'source' ),
         exclude: /node_modules/
       },

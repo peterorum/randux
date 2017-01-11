@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 
-import { updateWord } from './word.js';
+import {updateWord} from './word.js';
 
 describe( 'Word action', () => {
 
@@ -8,9 +8,7 @@ describe( 'Word action', () => {
 
     it( 'should create an action to change the word', () => {
 
-      const expected = {
-        type: 'UPDATE_WORD'
-      };
+      const expected = {type: 'UPDATE_WORD'};
 
       const actual = updateWord();
 
