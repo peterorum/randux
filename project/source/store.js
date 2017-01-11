@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
-import { Map, fromJS } from 'immutable';
+import { fromJS } from 'immutable';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 

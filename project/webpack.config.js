@@ -1,10 +1,10 @@
 var path = require( 'path' );
-var svgStore = require( 'webpack-svgstore-plugin' );
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var SvgStore = require( 'webpack-svgstore-plugin' );
+var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
+var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
-var extractCss = new ExtractTextPlugin('styles.css');
-var extractCssLibs = new ExtractTextPlugin('libs.css');
+var extractCss = new ExtractTextPlugin( 'styles.css' );
+var extractCssLibs = new ExtractTextPlugin( 'libs.css' );
 
 module.exports = {
   devtool: 'source-map',
@@ -20,26 +20,25 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new svgStore( {
+    new SvgStore( {
       prefix: 'icon-'
     } ),
     extractCssLibs,
     extractCss,
     // create a new index.html in the root folder based on the template
     // so that bundles etc can be injected, and hashed ones can be injected in production
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin( {
       template: 'index.template.html',
       filename: '../index.html'
-    })
+    } )
   ],
   module: {
-    preLoaders: [],
 
     loaders: [
       // js
       {
         test: /\.js$/,
-        loader: 'babel',
+        loaders: [ 'babel', 'eslint'],
         include: path.join( __dirname, 'source' ),
         exclude: /node_modules/
       },
@@ -48,14 +47,14 @@ module.exports = {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/normalize.css' ),
         // loaders: [ 'style', 'css' ]
-        loader:extractCssLibs.extract('style', 'css')
+        loader: extractCssLibs.extract( 'style', 'css' )
       },
       // add animate.css
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/animate.css' ),
         // loaders: [ 'style', 'css' ]
-        loader:extractCssLibs.extract('style', 'css')
+        loader: extractCssLibs.extract( 'style', 'css' )
       },
       // images
       {
@@ -69,7 +68,7 @@ module.exports = {
         test: /\.scss$/,
         include: path.join( __dirname, 'source/styles/styles.scss' ),
         // loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
-        loader:extractCss.extract('style', 'css!postcss!sass')
+        loader: extractCss.extract( 'style', 'css!postcss!sass' )
       }
     ]
   }

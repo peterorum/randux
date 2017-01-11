@@ -30,6 +30,7 @@ var __svg__ = {
   path: '../images/icons/**/*.svg',
   name: 'assets/images/icons/[hash].icons.svg'
 };
+
 require( 'webpack-svgstore-plugin/src/helpers/svgxhr' )( __svg__ );
 
 const router = (
@@ -41,6 +42,7 @@ const router = (
     </Route>
   </Router>
 </Provider>
-)
+);
 
 render( router, document.getElementById( 'main' ) );
+

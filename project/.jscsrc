@@ -1,6 +1,5 @@
 {
     "preset": "idiomatic",
-    "verbose": true,
     "validateIndentation": 2,
     "disallowDanglingUnderscores": false,
     "requireCamelCaseOrUpperCaseIdentifiers": false,

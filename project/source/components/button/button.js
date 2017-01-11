@@ -11,6 +11,10 @@ class Button extends React.Component {
 
   }
 
+  static propTypes = {
+    updateWord: React.PropTypes.function
+  }
+
   render() {
 
     const disabled = this.state.disabled ? 'disabled' : '';

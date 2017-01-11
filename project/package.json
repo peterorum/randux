@@ -12,9 +12,11 @@
     "test": "NODE_ENV=production mocha --recursive './source/**/*.spec.js' --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build": "npm run clean && npm run images && npm run build:webpack",
+    "build": "npm run lint && npm run clean && npm run images && npm run build:webpack",
     "clean": "rimraf dist/*",
-    "webpack": "NODE_ENV=development webpack"
+    "webpack": "NODE_ENV=development webpack",
+    "lint": "eslint source/**/*.js && jscs source/**/*.js",
+    "env": "env"
   },
   "repository": {
     "type": "git",
@@ -36,8 +38,12 @@
     "critical": "^0.8.1",
     "css-loader": "^0.25.0",
     "eslint": "^3.9.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.6.1",
     "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.5.0",
+    "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.26.0",

@@ -5,6 +5,10 @@ import Footer from '../footer/footer';
 
 class Main extends React.Component {
 
+  static propTypes = {
+    children: React.PropTypes.object
+  }
+
   render() {
 
     return (
