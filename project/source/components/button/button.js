@@ -1,8 +1,26 @@
+// @flow
+
 import React from 'react';
+
+type Props = {
+  updateWord: () => void
+};
 
 class Button extends React.Component {
 
-  constructor(props) {
+  // flow definitions
+
+  props: Props;
+
+  state: {
+    disabled: boolean;
+  }
+
+  onClick: () => void;
+
+  // constructor
+
+  constructor(props: Props) {
     super( props );
 
     this.state = {
@@ -11,9 +29,7 @@ class Button extends React.Component {
 
   }
 
-  static propTypes = {
-    updateWord: React.PropTypes.function
-  }
+  // render
 
   render() {
 
@@ -27,6 +43,8 @@ class Button extends React.Component {
     </button>
     );
   }
+
+  // events
 
   onClick = () => {
 

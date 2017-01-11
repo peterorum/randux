@@ -1,7 +1,10 @@
+// @flow
+import type {Action, State} from '../flow/types.js';
+
 import words from '../data/words';
 import {Map} from 'immutable';
 
-function word(state = Map({}), action) {
+function word(state: State = Map({}), action: Action) {
 
   // get new word & update store
 
@@ -9,8 +12,8 @@ function word(state = Map({}), action) {
 
     case 'UPDATE_WORD': {
 
-      const newWord = words.getWord();
-      const newState = state.set('word', newWord);
+      const newWord: string = words.getWord();
+      const newState: State = state.set('word', newWord);
 
       return newState;
     }

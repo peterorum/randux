@@ -1,3 +1,5 @@
+// @flow
+
 function getWord() {
   return words[Math.floor(words.length * Math.random())];
 }
@@ -304,7 +306,6 @@ const words = [
   "august",
   "aunt",
   "aura",
-  "aurora",
   "aussie",
   "austin",
   "australia",

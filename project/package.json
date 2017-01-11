@@ -16,8 +16,7 @@
     "clean": "rimraf dist/*",
     "webpack": "NODE_ENV=development webpack",
     "env": "env",
-    "fix": "eslint --fix source/**/*.js",
-    "flow": "flow source; test $? -eq 0 -o $? -eq 2"
+    "fix": "eslint --fix source/**/*.js"
   },
   "repository": {
     "type": "git",

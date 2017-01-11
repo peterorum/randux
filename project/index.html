@@ -1,104 +1,20 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Flow: Type Error
-  source/components/word/word.js:36
-   36: const x:number = 'abc';
-                        ^^^^^ string. This type is incompatible with
-   36: const x:number = 'abc';
-               ^^^^^^ number
-  
-  
-  Found 1 error
-  
-  - compiler.js:76 
-    [project]/[html-webpack-plugin]/lib/compiler.js:76:16
-  
-  - Compiler.js:214 Compiler.<anonymous>
-    [project]/[webpack]/lib/Compiler.js:214:10
-  
-  - Compiler.js:403 
-    [project]/[webpack]/lib/Compiler.js:403:12
-  
-  - Tapable.js:67 Compiler.next
-    [project]/[tapable]/lib/Tapable.js:67:11
-  
-  - CachePlugin.js:40 Compiler.<anonymous>
-    [project]/[webpack]/lib/CachePlugin.js:40:4
-  
-  - Tapable.js:71 Compiler.applyPluginsAsync
-    [project]/[tapable]/lib/Tapable.js:71:13
-  
-  - Compiler.js:400 Compiler.<anonymous>
-    [project]/[webpack]/lib/Compiler.js:400:9
-  
-  - Compilation.js:577 Compilation.<anonymous>
-    [project]/[webpack]/lib/Compilation.js:577:13
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [project]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:572 Compilation.<anonymous>
-    [project]/[webpack]/lib/Compilation.js:572:10
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [project]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:567 Compilation.<anonymous>
-    [project]/[webpack]/lib/Compilation.js:567:9
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [project]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:563 Compilation.<anonymous>
-    [project]/[webpack]/lib/Compilation.js:563:8
-  
-  - Tapable.js:60 Compilation.applyPluginsAsync
-    [project]/[tapable]/lib/Tapable.js:60:69
-  
-  - Compilation.js:525 Compilation.seal
-    [project]/[webpack]/lib/Compilation.js:525:7
-  
-  - Compiler.js:397 Compiler.<anonymous>
-    [project]/[webpack]/lib/Compiler.js:397:15
-  
-  - Tapable.js:103 
-    [project]/[tapable]/lib/Tapable.js:103:11
-  
-  - Compilation.js:445 Compilation.<anonymous>
-    [project]/[webpack]/lib/Compilation.js:445:10
-  
-  - Compilation.js:417 
-    [project]/[webpack]/lib/Compilation.js:417:12
-  
-  - Compilation.js:332 
-    [project]/[webpack]/lib/Compilation.js:332:10
-  
-  - async.js:52 
-    [project]/[webpack]/[async]/lib/async.js:52:16
-  
-  - async.js:246 done
-    [project]/[webpack]/[async]/lib/async.js:246:17
-  
-  - async.js:44 
-    [project]/[webpack]/[async]/lib/async.js:44:16
-  
-  - Compilation.js:332 
-    [project]/[webpack]/lib/Compilation.js:332:10
-  
-  - async.js:52 
-    [project]/[webpack]/[async]/lib/async.js:52:16
-  
-  - async.js:246 done
-    [project]/[webpack]/[async]/lib/async.js:246:17
-  
-  - async.js:44 
-    [project]/[webpack]/[async]/lib/async.js:44:16
-  
-  - Compilation.js:332 
-    [project]/[webpack]/lib/Compilation.js:332:10
-  
-  - async.js:52 
-    [project]/[webpack]/[async]/lib/async.js:52:16
-  
-</pre><script type="text/javascript" src="/static/bundle.js"></script>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randux</title>
+    <link href="https://fonts.googleapis.com/css?family=Mada|Taviraj" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Mada|Taviraj" rel="stylesheet" />
+    <script src="https://cdn.ravenjs.com/3.8.0/raven.min.js" crossorigin="anonymous"></script>
+<link href="/static/libs.css" rel="stylesheet"><link href="/static/styles.css" rel="stylesheet"></head>
+
+<body>
+    <a href='#main' class='skip-link' style='position: absolute; top: 0; right: 100%;'>Skip to main content</a>
+    <main id="main"></main>
+<script type="text/javascript" src="/static/bundle.js"></script></body>
+
+</html>
