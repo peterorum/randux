@@ -66,10 +66,10 @@ module.exports = {
       // css
       // assume one styles.scss that imports all it needs from the components
       // so each new component needs to be added to styles.scss
+      // a separate css file is created
       {
         test: /\.scss$/,
         include: path.join( __dirname, 'source/styles/styles.scss' ),
-        // loaders: [ 'style', 'css', 'postcss-loader', 'sass' ]
         loader: extractCss.extract( 'style', 'css!postcss!sass' )
       }
     ]
