@@ -17,9 +17,11 @@ class Word extends React.Component {
     const {word} = this.props;
     const nextWord = word.get( 'word' );
 
+    const events = { enter: 'animated', enterActive: 'flip', leave: 'hidden' };
+
     return (
     <div className='word'>
-      <ReactCSSTransitionGroup transitionName={ { enter: 'animated', enterActive: 'flip', leave: 'hidden' } } transitionEnterTimeout={ 1000 } transitionLeaveTimeout={ 0 }>
+      <ReactCSSTransitionGroup transitionName={ events } transitionEnterTimeout={ 1000 } transitionLeaveTimeout={ 0 }>
         <p key={ nextWord }>
           { nextWord }
         </p>
