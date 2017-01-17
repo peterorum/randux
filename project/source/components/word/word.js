@@ -1,15 +1,18 @@
+// flow
+
 import React from 'react';
 
 import Button from '../button/button';
+
+type Props = {
+word: Map
+};
 
 class Word extends React.Component {
 
   // flow definitions
 
-  static propTypes = {
-    word: React.PropTypes.object
-  // word: React.PropTypes.instanceOf(Map).isRequired
-  };
+  props: Props;
 
   state: {
   animate: boolean;
@@ -51,6 +54,7 @@ class Word extends React.Component {
     }
 
     // render
+
     return (
 
     <div className='word'>
