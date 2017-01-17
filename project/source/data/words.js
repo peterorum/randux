@@ -5246,7 +5246,6 @@ const words = [
   "theory",
   "therapy",
   "there",
-  "theres",
   "thermal",
   "thick",
   "thieves",
