@@ -4,18 +4,25 @@ Boilerplate react+redux setup with immutable, webpack, es6/babel, sass, postcss,
 ## features
 * development & production builds using webpack
 * react hot module reload with webpack dev server
-* normalize.css
-* using animate.css with react css transformations
+* normalize.css, animate.css
+* flow static syntax anlysis
 * mocha+chai tests for components, actions & reducers
 * express server for use on production server
 * image optimization with imagemin
 * svg optimization with svgo
+* svg classes with imacss
 
 ## installation
 
 1. npm install
 2. npm run start
 3. view on localhost:8080
+
+## flow
+To use library definitions goe flow analysis:
+
+1. npm install -g flow-typed
+2. flow-typed install
 
 ## tests
 
