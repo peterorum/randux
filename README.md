@@ -19,7 +19,7 @@ Boilerplate react+redux setup with immutable, webpack, es6/babel, sass, postcss,
 3. view on localhost:8080
 
 ## flow
-To use library definitions goe flow analysis:
+To use library definitions for flow analysis:
 
 1. npm install -g flow-typed
 2. flow-typed install
