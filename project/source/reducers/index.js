@@ -1,4 +1,4 @@
-// @flow
+// flow weak
 
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';

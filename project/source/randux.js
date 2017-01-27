@@ -1,4 +1,4 @@
-// @flow
+// flow weak
 
 import React from 'react';
 
@@ -30,7 +30,7 @@ if (process.env.sentryKey) {
 // svgstore
 const __svg__ = {
   path: '../images/icons/**/*.svg',
-  name: 'assets/images/icons/[hash].icons.svg'
+  name: 'images/icons/[hash].icons.svg'
 };
 
 require( 'webpack-svgstore-plugin/src/helpers/svgxhr' )( __svg__ );

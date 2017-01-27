@@ -1,4 +1,4 @@
-// @flow
+// flow weak
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

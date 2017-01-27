@@ -1,4 +1,4 @@
-// @flow
+// flow weak
 
 function getWord() {
   return words[Math.floor(words.length * Math.random())];

@@ -1,4 +1,4 @@
-// @flow
+// flow weak
 import type {Action, State} from '../flow/types.js';
 
 import words from '../data/words';

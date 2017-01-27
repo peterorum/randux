@@ -1,21 +1,37 @@
-var path = require( 'path' );
-var webpack = require( 'webpack' );
-var svgStore = require( 'webpack-svgstore-plugin' );
-var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require( 'path' );
+const webpack = require( 'webpack' );
+const SvgStore = require( 'webpack-svgstore-plugin' );
+const ExtractTextPlugin = require( "extract-text-webpack-plugin" );
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require( "copy-webpack-plugin" );
 
-var extractCss = new ExtractTextPlugin( 'styles-[contenthash].css' );
-var extractCssLibs = new ExtractTextPlugin( 'libs-[contenthash].css' );
+const extractCss = new ExtractTextPlugin( 'css/styles-[contenthash].css' );
+const extractCssLibs = new ExtractTextPlugin( 'css/libs-[contenthash].css' );
+
+// copy static files to dist folder
+
+const copyFiles = new CopyWebpackPlugin( [
+  {
+    from: "images/**/*"
+  },
+  {
+    from: "data/*.json"
+  },
+  {
+    from: "server/serve*"
+  }
+
+], {} );
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    './source/randux'
-  ],
+  entry: {
+    'js/bundle': './source/randux'
+  },
   output: {
     path: path.join( __dirname, 'dist' ),
-    filename: 'bundle-[hash].js',
-    publicPath: '/static/'
+    filename: '[name]-[hash].js',
+    publicPath: ''
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -29,7 +45,7 @@ module.exports = {
         warnings: false
       }
     } ),
-    new svgStore( {
+    new SvgStore( {
       prefix: 'icon-'
     } ),
     extractCssLibs,
@@ -37,7 +53,8 @@ module.exports = {
     // creates a new index.html under dist with the hashed bundles
     new HtmlWebpackPlugin({
       template: 'index.template.html'
-    })
+    }),
+    copyFiles
   ],
   module: {
     loaders: [
