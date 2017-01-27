@@ -40,7 +40,7 @@ module.exports = {
       // js
       {
         test: /\.js$/,
-        loaders: [ 'babel', 'eslint' ],
+        loaders: [ 'babel?cacheDirectory', 'eslint' ],
         include: path.join( __dirname, 'source' ),
         exclude: /node_modules/
       },
