@@ -29,7 +29,7 @@ class Word extends React.Component {
   }
 
   // default props
-  defaultProps = {
+  static defaultProps = {
     word: Map({})
   }
 
