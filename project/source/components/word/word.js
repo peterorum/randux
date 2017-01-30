@@ -28,6 +28,11 @@ class Word extends React.Component {
     };
   }
 
+  // default props
+  defaultProps = {
+    word: Map({})
+  }
+
   componentWillReceiveProps(nextProps) {
 
     if (nextProps !== this.props) {
