@@ -7,7 +7,7 @@ import createLogger from 'redux-logger';
 
 import rootReducer from './reducers/index';
 
-import { updateWord } from './actions/word.js';
+import { updateWord } from './actions/word';
 
 const defaultState = {
   word: fromJS( {
@@ -19,6 +19,7 @@ const defaultState = {
 
 const middleware = [ thunk ];
 
+// eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -33,6 +34,7 @@ export const history = syncHistoryWithStore( browserHistory, store );
 
 if (module.hot) {
   module.hot.accept( './reducers/', () => {
+    // eslint-disable-next-line global-require
     const nextRootReducer = require( './reducers/index' ).default;
 
     store.replaceReducer( nextRootReducer );

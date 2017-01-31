@@ -5,22 +5,16 @@ import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
-class Main extends React.Component {
+const Main = (props) =>
 
-  static propTypes = {
-    children: React.PropTypes.object
-  }
+  <div>
+    <Header />
+    { React.cloneElement( props.children, props ) }
+    <Footer />
+  </div>
 
-  render() {
-
-    return (
-    <div>
-      <Header />
-      { React.cloneElement( this.props.children, this.props ) }
-      <Footer />
-    </div>
-    );
-  }
+Main.propTypes = {
+  children: React.PropTypes.element.isRequired
 }
 
 export default Main;

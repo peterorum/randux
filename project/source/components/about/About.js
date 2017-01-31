@@ -2,16 +2,10 @@
 
 import React from 'react';
 
-class About extends React.Component {
+const About = () =>
 
-  render() {
-
-    return (
-    <p>
-      <a href='https://github.com/peterorum/randux' target='_blank'>Github Source</a>
-    </p>
-    );
-  }
-}
+  <p>
+    <a href='https://github.com/peterorum/randux' target='_blank' rel='noopener noreferrer'>Github Source</a>
+  </p>
 
 export default About;

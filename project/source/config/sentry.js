@@ -6,8 +6,14 @@ import Raven from 'raven-js';
 export const sentryUrl = `https://${process.env.sentryKey}@sentry.io/${process.env.sentryApp}`;
 
 export function logException(ex, context) {
-  Raven.captureException( ex, {extra: context} );
-  window && window.console && console.error && console.error( ex );
+  Raven.captureException( ex, {
+    extra: context
+  } );
+
+  if (window && window.console && console.error) {
+
+    console.error( ex );
+  }
 }
 
 // force error example

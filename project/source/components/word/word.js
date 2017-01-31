@@ -31,7 +31,7 @@ class Word extends React.Component {
 
   // default props
   static defaultProps = {
-    word: Map({})
+    word: Map( {} )
   }
 
   componentWillReceiveProps(nextProps) {
@@ -45,7 +45,7 @@ class Word extends React.Component {
 
   render() {
 
-    const {word} = this.props;
+    const { word } = this.props;
     const nextWord = word.get( 'word' );
 
     // remove animation classes after duration
@@ -63,15 +63,15 @@ class Word extends React.Component {
 
     return (
 
-    <div className='word'>
-      <p key={ nextWord } className={ this.state.animate ? 'animated flip' : '' }>
-        { nextWord }
-      </p>
-      { /* button */ }
-      <div className='btn-container'>
-        <Button {...this.props}/>
+      <div className='word'>
+        <p key={ nextWord } className={ this.state.animate ? 'animated flip' : '' }>
+          { nextWord }
+        </p>
+        { /* button */ }
+        <div className='btn-container'>
+          <Button {...this.props} />
+        </div>
       </div>
-    </div>
     );
   }
 }

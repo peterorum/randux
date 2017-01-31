@@ -36,11 +36,11 @@ class Button extends React.Component {
     const disabled = this.state.disabled ? 'disabled' : '';
 
     return (
-    <button className="btn-svg" disabled={ disabled } onClick={ this.onClick }>
-      <svg>
-        <use xlinkHref="#icon-random"></use>
-      </svg>
-    </button>
+      <button className="btn-svg" disabled={ disabled } onClick={ this.onClick }>
+        <svg>
+          <use xlinkHref="#icon-random" />
+        </svg>
+      </button>
     );
   }
 

@@ -1,9 +1,5 @@
 // flow weak
 
-function getWord() {
-  return words[Math.floor(words.length * Math.random())];
-}
-
 const words = [
   "abandoned",
   "abc",
@@ -5877,4 +5873,11 @@ const words = [
   "zoom"
 ];
 
-export default {getWord}
+function getWord() {
+
+  return words[Math.floor( words.length * Math.random() )];
+}
+
+export default {
+  getWord
+}

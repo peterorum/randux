@@ -3,16 +3,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Header extends React.Component {
+const Header = () =>
 
-  render() {
-
-    return (
-    <header role='banner'>
-        <Link className='image-link' to='/'><img src='/images/logo.png' /></Link>
-    </header>
-    );
-  }
-}
+  <header role='banner'>
+    <Link className='image-link' to='/'><img src='/images/logo.png' alt='logo' /></Link>
+  </header>
 
 export default Header;

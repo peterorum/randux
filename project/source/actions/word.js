@@ -1,5 +1,7 @@
 export function updateWord() {
 
-  return {type: 'UPDATE_WORD'}
+  return {
+    type: 'UPDATE_WORD'
+  }
 }
 
