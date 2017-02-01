@@ -4,8 +4,12 @@ const ExtractTextPlugin = require( "extract-text-webpack-plugin" );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const FlowBabelWebpackPlugin = require( 'flow-babel-webpack-plugin' );
 
-const extractCss = new ExtractTextPlugin( {filename: 'styles.css'} );
-const extractCssLibs = new ExtractTextPlugin( {filename: 'libs.css'} );
+const extractCss = new ExtractTextPlugin( {
+  filename: 'styles.css'
+} );
+const extractCssLibs = new ExtractTextPlugin( {
+  filename: 'libs.css'
+} );
 
 module.exports = {
   devtool: 'source-map',
@@ -48,19 +52,19 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/normalize.css' ),
-        loader: extractCssLibs.extract({
+        loader: extractCssLibs.extract( {
           fallbackLoader: "style-loader",
           loader: 'css-loader'
-        })
+        } )
       },
       // add animate.css
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/animate.css' ),
-        loader: extractCssLibs.extract({
+        loader: extractCssLibs.extract( {
           fallbackLoader: "style-loader",
           loader: 'css-loader'
-        })
+        } )
       },
       // images
       {
@@ -74,10 +78,10 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.join( __dirname, 'source/styles/styles.scss' ),
-        loader: extractCss.extract({
+        loader: extractCss.extract( {
           fallbackLoader: "style-loader",
-          loader: ['css-loader', 'postcss-loader', 'sass-loader']
-        })
+          loader: [ 'css-loader', 'postcss-loader', 'sass-loader' ]
+        } )
       }
     ]
   }

@@ -97,7 +97,6 @@ module.exports = {
           fallbackLoader: "style-loader",
           loader: ['css-loader', 'postcss-loader', 'sass-loader']
         })
-
       }
     ]
   }
