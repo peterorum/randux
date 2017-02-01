@@ -4,8 +4,8 @@ const ExtractTextPlugin = require( "extract-text-webpack-plugin" );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const FlowBabelWebpackPlugin = require( 'flow-babel-webpack-plugin' );
 
-const extractCss = new ExtractTextPlugin( 'styles.css' );
-const extractCssLibs = new ExtractTextPlugin( 'libs.css' );
+const extractCss = new ExtractTextPlugin( {filename: 'styles.css'} );
+const extractCssLibs = new ExtractTextPlugin( {filename: 'libs.css'} );
 
 module.exports = {
   devtool: 'source-map',
@@ -36,11 +36,11 @@ module.exports = {
   ],
   module: {
 
-    loaders: [
+    rules: [
       // js
       {
         test: /\.js$/,
-        loaders: [ 'babel?cacheDirectory', 'eslint' ],
+        use: [ 'babel-loader?cacheDirectory', 'eslint-loader' ],
         include: path.join( __dirname, 'source' ),
         exclude: /node_modules/
       },
@@ -48,20 +48,24 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/normalize.css' ),
-        // loaders: [ 'style', 'css' ]
-        loader: extractCssLibs.extract( 'style', 'css' )
+        loader: extractCssLibs.extract({
+          fallbackLoader: "style-loader",
+          loader: 'css-loader'
+        })
       },
       // add animate.css
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/animate.css' ),
-        // loaders: [ 'style', 'css' ]
-        loader: extractCssLibs.extract( 'style', 'css' )
+        loader: extractCssLibs.extract({
+          fallbackLoader: "style-loader",
+          loader: 'css-loader'
+        })
       },
       // images
       {
         test: /\.(png|jpg|svg)$/,
-        loader: 'file?name=[path][name].[ext]'
+        loader: 'file-loader?name=[path][name].[ext]'
       },
       // css
       // assume one styles.scss that imports all it needs from the components
@@ -70,7 +74,10 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.join( __dirname, 'source/styles/styles.scss' ),
-        loader: extractCss.extract( 'style', 'css!postcss!sass' )
+        loader: extractCss.extract({
+          fallbackLoader: "style-loader",
+          loader: ['css-loader', 'postcss-loader', 'sass-loader']
+        })
       }
     ]
   }
