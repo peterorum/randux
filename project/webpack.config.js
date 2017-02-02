@@ -7,6 +7,7 @@ const FlowBabelWebpackPlugin = require( 'flow-babel-webpack-plugin' );
 const extractCss = new ExtractTextPlugin( {
   filename: 'styles.css'
 } );
+
 const extractCssLibs = new ExtractTextPlugin( {
   filename: 'libs.css'
 } );
