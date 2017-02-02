@@ -58,7 +58,7 @@
   "no-floating-decimal": 1,
   "no-implicit-coercion": 1,
   "no-lonely-if": 1,
-  "no-magic-numbers": ["error", { "ignore": [0, 1] }],
+  "no-magic-numbers": ["error", { "ignore": [0, 1, -1] }],
   "no-mixed-spaces-and-tabs": 0,
   "no-multi-spaces": 1,
   "no-regex-spaces": 1,

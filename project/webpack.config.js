@@ -1,4 +1,5 @@
 const path = require( 'path' );
+const webpack = require('webpack');
 const SvgStore = require( 'webpack-svgstore-plugin' );
 const ExtractTextPlugin = require( "extract-text-webpack-plugin" );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
@@ -15,7 +16,8 @@ const extractCssLibs = new ExtractTextPlugin( {
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './source/randux'
+    'react-hot-loader/patch',
+    './source/index'
   ],
   output: {
     path: path.join( __dirname, 'dev' ),
@@ -26,6 +28,7 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new SvgStore( {
       prefix: 'icon-'
     } ),

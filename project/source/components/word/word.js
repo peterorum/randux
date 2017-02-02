@@ -1,4 +1,4 @@
-// flow weak
+// @flow weak
 
 import React from 'react';
 import { Map } from 'immutable';
@@ -6,7 +6,7 @@ import { Map } from 'immutable';
 import Button from '../button/button';
 
 type Props = {
-word: Map
+word: Map<string, *>
 };
 
 class Word extends React.Component {
