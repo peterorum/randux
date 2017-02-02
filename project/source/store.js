@@ -1,48 +1,31 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { browserHistory } from 'react-router';
-import { fromJS } from 'immutable';
-import thunk from 'redux-thunk';
+import promiseMiddleware from 'redux-promise';
 import createLogger from 'redux-logger';
+import thunk from 'redux-thunk';
 
 import rootReducer from './reducers/index';
 
-import { updateWord } from './actions/word';
+const logger = createLogger();
 
-const defaultState = {
-  word: fromJS( {
-    word: 'fish'
-  } )
-};
+// eslint-disable-next-line global-require
+const middlewares = [thunk, promiseMiddleware, logger, require('redux-immutable-state-invariant')()];
 
-//----------- create store
+const enhancer = compose(
+  applyMiddleware(...middlewares)
+);
 
-const middleware = [ thunk ];
+export default function configureStore(initialState) {
+  const store = createStore(rootReducer, initialState, enhancer);
 
-// eslint-disable-next-line no-underscore-dangle
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  // Enable hot module replacement for reducers (requires Webpack or Browserify HMR to be enabled)
+  if (module.hot) {
+    module.hot.accept('./reducers', () => {
+      // eslint-disable-next-line global-require
+      const nextReducer = require('./reducers').default;
 
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push( createLogger() )
+      store.replaceReducer(nextReducer);
+    });
+  }
+
+  return store;
 }
-
-const store = createStore( rootReducer, defaultState, composeEnhancers(
-  applyMiddleware( ...middleware )
-) );
-
-export const history = syncHistoryWithStore( browserHistory, store );
-
-if (module.hot) {
-  module.hot.accept( './reducers/', () => {
-    // eslint-disable-next-line global-require
-    const nextRootReducer = require( './reducers/index' ).default;
-
-    store.replaceReducer( nextRootReducer );
-  } );
-}
-
-//---------- preload data
-
-store.dispatch( updateWord() );
-
-export default store;

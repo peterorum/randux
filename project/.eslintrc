@@ -53,12 +53,12 @@
   "no-constant-condition": 1,
   "no-extra-bind": 1,
   "no-extra-label": 1,
-  "no-extra-parens": 1,
+  "no-extra-parens": 0,
   "no-extra-semi": 1,
   "no-floating-decimal": 1,
   "no-implicit-coercion": 1,
   "no-lonely-if": 1,
-  "no-magic-numbers": ["error", { "ignore": [0, 1] }],
+  "no-magic-numbers": ["error", { "ignore": [0, 1, -1] }],
   "no-mixed-spaces-and-tabs": 0,
   "no-multi-spaces": 1,
   "no-regex-spaces": 1,
@@ -89,6 +89,8 @@
   "react/jsx-filename-extension": 0,
   "react/sort-comp": 0,
   "react/jsx-curly-spacing": 0,
-  "import/prefer-default-export": 0
+  "import/prefer-default-export": 0,
+
+  react/forbid-prop-types: 0
   }
 }

@@ -1,27 +1,18 @@
 {
-  "presets": ["react", "es2015", "stage-0"],
+  "presets": [
+    ["es2015", { "modules": false }],
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy",
+    "transform-flow-strip-types",
+    "react-hot-loader/babel"
+  ],
   "env": {
-    "development": {
-      "plugins": [
-        ["react-transform", {
-          "transforms": [{
-            "transform": "react-transform-hmr",
-            "imports": ["react"],
-            "locals": ["module"]
-          },
-          {
-            "transform": "react-transform-catch-errors",
-            "imports": [
-              "react", "redbox-react"
-            ] }]
-        }],
-        "transform-flow-comments"
-      ]
-    },
     "production": {
-      "plugins": [
-      ]
-    },
-
+      "plugins": ["transform-react-remove-prop-types", "transform-react-constant-elements"]
+    }
   }
 }
