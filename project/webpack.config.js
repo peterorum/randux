@@ -1,17 +1,8 @@
 const path = require( 'path' );
 const webpack = require('webpack');
 const SvgStore = require( 'webpack-svgstore-plugin' );
-const ExtractTextPlugin = require( "extract-text-webpack-plugin" );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const FlowBabelWebpackPlugin = require( 'flow-babel-webpack-plugin' );
-
-const extractCss = new ExtractTextPlugin( {
-  filename: 'styles.css'
-} );
-
-const extractCssLibs = new ExtractTextPlugin( {
-  filename: 'libs.css'
-} );
 
 module.exports = {
   devtool: 'source-map',
@@ -33,8 +24,6 @@ module.exports = {
     new SvgStore( {
       prefix: 'icon-'
     } ),
-    extractCssLibs,
-    extractCss,
     // create a new index.html in the root folder based on the template
     // so that bundles etc can be injected, and hashed ones can be injected in production
     new HtmlWebpackPlugin( {
@@ -57,36 +46,36 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/normalize.css' ),
-        loader: extractCssLibs.extract( {
-          fallbackLoader: "style-loader",
-          loader: 'css-loader'
-        } )
+        loaders: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       // add animate.css
       {
         test: /\.css$/,
         include: path.join( __dirname, 'node_modules/animate.css' ),
-        loader: extractCssLibs.extract( {
-          fallbackLoader: "style-loader",
-          loader: 'css-loader'
-        } )
+        loaders: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      // sass
+      // assume one styles.scss that imports all it needs from the components
+      // so each new component needs to be added to styles.scss
+      {
+        test: /\.scss$/,
+        include: path.resolve( __dirname, 'source/styles/styles.scss' ),
+        loaders: [
+          'style-loader',
+          'css-loader',
+          { loader: 'sass-loader', query: { outputStyle: 'expanded' } }
+        ]
       },
       // images
       {
         test: /\.(png|jpg|svg)$/,
         loader: 'file-loader?name=[path][name].[ext]'
-      },
-      // css
-      // assume one styles.scss that imports all it needs from the components
-      // so each new component needs to be added to styles.scss
-      // a separate css file is created
-      {
-        test: /\.scss$/,
-        include: path.join( __dirname, 'source/styles/styles.scss' ),
-        loader: extractCss.extract( {
-          fallbackLoader: "style-loader",
-          loader: [ 'css-loader', 'postcss-loader', 'sass-loader' ]
-        } )
       }
     ]
   }
