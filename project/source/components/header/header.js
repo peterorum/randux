@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 const Header = () =>
 
   <header role='banner'>
-    <Link className='image-link' to='/'><img src='/images/logo.png' alt='logo' /></Link>
+    <Link className='image-link' to='/'><img src='/static/images/logo.png' alt='logo' /></Link>
   </header>
 
 export default Header;

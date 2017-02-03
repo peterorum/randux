@@ -3,6 +3,13 @@ const webpack = require('webpack');
 const SvgStore = require( 'webpack-svgstore-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const FlowBabelWebpackPlugin = require( 'flow-babel-webpack-plugin' );
+const CopyWebpackPlugin = require( "copy-webpack-plugin" );
+
+const copyFiles = new CopyWebpackPlugin( [
+  {
+    from: "images/**/*"
+  }
+], {} );
 
 module.exports = {
   devtool: 'source-map',
@@ -30,7 +37,8 @@ module.exports = {
       template: 'index.template.html',
       filename: '../index.html'
     } ),
-    new FlowBabelWebpackPlugin()
+    new FlowBabelWebpackPlugin(),
+    copyFiles
   ],
   module: {
 
