@@ -30,7 +30,7 @@ const copyFiles = new CopyWebpackPlugin( [
 module.exports = {
   devtool: 'source-map',
   entry: {
-    'js/bundle': './source/randux'
+    'js/bundle': './source/index'
   },
   output: {
     path: path.join( __dirname, 'dist' ),

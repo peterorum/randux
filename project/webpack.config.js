@@ -21,7 +21,7 @@ module.exports = {
   output: {
     path: path.join( __dirname, 'dev' ),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: ''
   },
   devServer: {
     historyApiFallback: true
