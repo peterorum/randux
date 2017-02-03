@@ -4,8 +4,7 @@
   "description": "Display a random word using react+redux.",
   "main": "index.js",
   "scripts": {
-    "serve": "node dev-server.js",
-    "start": "NODE_ENV=development npm run clean-dev && npm run images && webpack && npm run serve",
+    "start": "NODE_ENV=development npm run clean-dev && npm run images && webpack-dashboard -c cyan -- node dev-server.js",
     "images": "npm run imagemin && npm run svgo && npm run imacss",
     "imagemin": "imagemin ../design/images/**/* --out-dir=images",
     "svgo": "svgo --input=../design/svg --output=images/icons --config=./.svgo.yml",
@@ -99,6 +98,7 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "webpack": "^2.2.1",
+    "webpack-dashboard": "^0.3.0",
     "webpack-svgstore-plugin": "https://github.com/Algotec/webpack-svgstore-plugin/tarball/develop"
   }
 }

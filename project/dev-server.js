@@ -7,14 +7,14 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-// const DashboardPlugin = require('webpack-dashboard/plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const config = require('./webpack.config');
 
 const app = express();
 const compiler = webpack(config);
 
 // Apply CLI dashboard for your webpack dev server
-// compiler.apply(new DashboardPlugin());
+compiler.apply(new DashboardPlugin());
 
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3001;

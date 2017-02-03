@@ -13,16 +13,19 @@ import 'normalize.css';
 import 'animate.css';
 import './styles/styles.scss';
 
+import { updateWord } from './actions/index';
+
 import Root from './root';
 import configureStore from './store';
 
+// import words from './data/words';
 
 // sentry error tracking
 import { sentryUrl } from './config/sentry';
 
 const initialState = {
   word: fromJS( {
-    word: 'fish'
+    word: ''
   } )
 };
 
@@ -76,3 +79,8 @@ if (module.hot) {
     );
   } );
 }
+
+// initialize
+
+store.dispatch(updateWord())
+
