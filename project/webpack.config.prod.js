@@ -22,7 +22,8 @@ const copyFiles = new CopyWebpackPlugin( [
     from: "data/*.json"
   },
   {
-    from: "server/serve*"
+    from: "server/serve*",
+    to: "[name].[ext]"
   }
 
 ], {} );
