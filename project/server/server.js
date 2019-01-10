@@ -61,15 +61,9 @@
     sendFile( res, uri.pathname );
   } );
 
-  //------------ html
-  app.get( /\.(html)$/, function(req, res) {
-    var uri = url.parse( req.url, true, false );
+  //------------- return index.html for everything else so routing works
 
-    sendFile( res, htmlPath + uri.pathname );
-  } );
-
-  //------------- home page
-  app.get( '/', function(req, res) {
+  app.get( '*', function(req, res) {
     sendFile( res, `${htmlPath}index.html` );
   } );
 
